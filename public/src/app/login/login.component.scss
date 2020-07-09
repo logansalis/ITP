@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.login-container {
+  width: 500px;
+}
+
+.login{
+  background-color: white;
+}
+
+.discord-logo{
+  width: 35px;
+}
+
+hr {
+  border: 1px solid $new-primary;
+}
+
+button img, button span {
+  vertical-align: middle;
+}

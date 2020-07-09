@@ -1,0 +1,69 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="/Home">
+      <img src="" alt="ITP Logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end text-right"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <span class="navbar-text text-white mr-md-4"
+            >Welcome <a class="text-white" href="/profile">*Username*</a></span
+          >
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-light ml-md-4">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="btn btn-primary btn-sm text-white rounded-pill" *ngFor='let c of categories' href="Items/Category/{{ c }}">{{ c }}</a>
+      </li>
+    </ul>
+    <div class="navbar-nav">
+      <div class="input-group">
+        <div class="input-group-append">
+          <span class="input-group-text">Item</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search..."
+          aria-label="Search"
+          aria-describedby="Search-Input"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary form-control py-0" type="button" id="Search-Input">
+            <img
+              src="../../../../assets/images/search_icon.png"
+              alt="Search"
+              class="search-img"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="teal-leaf-bg">
+  <div class="container-fluid opaque">
+    <router-outlet></router-outlet>
+  </div>
+</section>
+<footer class="container-fluid bg-primary"></footer>

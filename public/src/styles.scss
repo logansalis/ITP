@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// $yiq-contrasted-threshold: 200;
+// $new-primary: #54B7AD;
+// $new-secondary: #7688D4;
+// $leaf-bg: "/assets/images/teal_leaf_bg.png";
+
+.btn-primary {
+  @include button-variant($new-primary, darken($new-primary, 7.5%), darken($new-primary, 10%), lighten($new-primary,5%), lighten($new-primary, 10%), darken($new-primary,30%));
+}
+
+.btn-secondary {
+  @include button-variant($new-secondary, darken($new-secondary, 7.5%), darken($new-secondary, 10%), lighten($new-secondary,5%), lighten($new-secondary, 10%), darken($new-secondary,30%));
+}
+
+$yiq-contrasted-threshold: 100;
+
+.teal-leaf-bg{
+  background-image: url(#{$leaf-bg});
+  background-repeat: repeat;
+}
+
+.general-bg {
+  background-color: rgba(255, 255, 255, 0.719);
+}
+

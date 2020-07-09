@@ -1,0 +1,53 @@
+<section class="container general-bg">
+  <!-- Cards for recent wishes -->
+  <div class="d-flex justify-content-between align-items-center pt-4 pb-2 px-4">
+    <h3 class="">Wishes</h3>
+    <div class="dropdown" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-primary btn-sm dropdown-toggle">
+        Filter by Type
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+        <button class="dropdown-item" (click)="getWishes()">
+          Clear
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" *ngFor="let type of wishTypes" (click)="onFilterClick(type)">
+          {{ type }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group pb-4">
+    <li
+      class="list-group-item d-flex flex-wrap justify-content-center"
+      *ngFor="let wish of wishes"
+    >
+      <div>
+        <img src="{{ wish.item.image }}" />
+      </div>
+      <div class="flex-fill text-center my-auto" style="min-width: 13rem;">
+        <h5>{{ wish.item.name | titlecase }}</h5>
+        <p class="m-0">
+          <small>{{ wish.user.name }}</small>
+        </p>
+        <p class="m-0">
+          <small>{{ wish.created_at | date: "mediumDate" }}</small>
+        </p>
+      </div>
+      <div class="my-auto">
+        <button
+          class="btn btn-outline-danger"
+          *ngIf="wish.user.name == 'Wysteria'; else notUser"
+        >
+          Delete
+        </button>
+        <ng-template #notUser
+          ><button class="btn btn-outline-primary">
+            Grant Wish
+          </button></ng-template
+        >
+      </div>
+    </li>
+  </ul>
+</section>
